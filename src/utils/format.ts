@@ -1,0 +1,3 @@
+export function parseNum(v:unknown,fallback=0){if(v===""||v===null||v===undefined)return fallback;const n=Number.parseFloat(String(v).replace(/,/g,""));return Number.isFinite(n)?n:fallback;}
+export function formatCurrency(v:number){return new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(Number.isFinite(v)?v:0);}
+export function greeting(){const h=new Date().getHours();return h<12?"Selamat pagi":h<15?"Selamat siang":h<18?"Selamat sore":"Selamat malam";}

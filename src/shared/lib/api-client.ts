@@ -1,0 +1,3 @@
+import axios from "axios";
+export const api=axios.create({baseURL:process.env.EXPO_PUBLIC_API_URL||"https://ex-kalkulator.vercel.app",timeout:20000,withCredentials:true,headers:{"Content-Type":"application/json",Accept:"application/json"}});
+api.interceptors.response.use(r=>r,e=>Promise.reject(new Error(e?.response?.data?.error||e?.response?.data?.message||e.message||"Terjadi kesalahan jaringan.")));

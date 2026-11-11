@@ -1,0 +1,1 @@
+import{SettingsScreen}from"@/features/account/components/settings-screen";export default SettingsScreen;

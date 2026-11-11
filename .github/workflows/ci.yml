@@ -9,13 +9,11 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    container:
+      image: node:22.13.1-bookworm
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
       - name: Install dependencies
         run: npm install
       - name: Check TypeScript
